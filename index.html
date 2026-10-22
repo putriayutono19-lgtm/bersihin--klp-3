@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BersihIn | Cleaning Service Makassar (Kelompok 3)</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f8fcf9;
+        color: #18352c;
+        line-height: 1.6;
+      }
+
+      header {
+        background: white;
+        padding: 18px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #087f5b;
+      }
+
+      .logo span {
+        font-size: 14px;
+        color: #52675d;
+        font-weight: normal;
+        display: block;
+      }
+
+      nav a {
+        margin-left: 18px;
+        text-decoration: none;
+        color: #18352c;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #087f5b;
+      }
+
+      .hero {
+        padding: 60px 8%;
+        background: #e8f7f0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 35px;
+      }
+
+      .hero-content {
+        flex: 1;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+        line-height: 1.2;
+        margin: 18px 0;
+      }
+
+      .hero h1 span {
+        color: #087f5b;
+      }
+
+      .hero p {
+        margin-bottom: 25px;
+        color: #52675d;
+      }
+
+      .illustration {
+        flex: 1;
+        text-align: center;
+        font-size: 100px;
+        background: white;
+        padding: 40px 20px;
+        border-radius: 25px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .button {
+        display: inline-block;
+        padding: 14px 24px;
+        border-radius: 8px;
+        background: #087f5b;
+        color: white;
+        text-decoration: none;
+        border: none;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        transition: background 0.2s;
+      }
+
+      .button:hover {
+        background: #056044;
+      }
+
+      section {
+        padding: 50px 8%;
+      }
+
+      .heading {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+
+      .heading h2 {
+        font-size: 30px;
+        margin-bottom: 8px;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .card {
+        background: white;
+        border: 1px solid #dce9e2;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+      }
+
+      .card .icon {
+        font-size: 45px;
+      }
+
+      .card h3 {
+        margin: 12px 0;
+      }
+
+      .card p {
+        color: #64756e;
+        margin-bottom: 15px;
+      }
+
+      .price {
+        font-weight: bold;
+        color: #087f5b;
+        font-size: 20px;
+      }
+
+      .about {
+        background: #e8f7f0;
+        text-align: center;
+      }
+
+      .about p {
+        max-width: 700px;
+        margin: 15px auto;
+      }
+
+      .booking {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid #dce9e2;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .admin-setting {
+        background: #f0fdf4;
+        border: 1px dashed #087f5b;
+        padding: 12px 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .admin-setting label {
+        margin-top: 0;
+        color: #087f5b;
+        font-size: 13px;
+      }
+
+      label {
+        display: block;
+        margin: 14px 0 5px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #cadbd1;
+        border-radius: 7px;
+        font: inherit;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #087f5b;
+      }
+
+      textarea {
+        min-height: 90px;
+        resize: vertical;
+      }
+
+      .booking button {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      footer {
+        background: #123d30;
+        color: white;
+        text-align: center;
+        padding: 25px;
+      }
+
+      @media (max-width: 750px) {
+        header {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        nav a {
+          margin: 0 6px;
+          font-size: 14px;
+        }
+
+        .hero {
+          flex-direction: column;
+          padding: 40px 6%;
+        }
+
+        .hero h1 {
+          font-size: 32px;
+        }
+
+        .illustration {
+          width: 100%;
+          font-size: 70px;
+        }
+
+        .services {
+          grid-template-columns: 1fr;
+        }
+
+        section {
+          padding: 40px 6%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        BersihIn
+        <span>Kelompok 3 — Makassar</span>
+      </div>
+
+      <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#pesan">Pesan</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="beranda">
+        <div class="hero-content">
+          <p><strong>Website Proyek Kelompok 3</strong></p>
+
+          <h1>
+            Rumah Bersih,<br />
+            <span>Hati Lebih Nyaman.</span>
+          </h1>
+
+          <p>
+            BersihIn menyediakan jasa cleaning service untuk rumah, kamar kos,
+            dan tempat kerja di Makassar. Praktis, mudah, dan nyaman.
+          </p>
+
+          <a href="#pesan" class="button">Pesan Sekarang</a>
+        </div>
+
+        <div class="illustration">🧹✨</div>
+      </section>
+
+      <section id="layanan">
+        <div class="heading">
+          2. Layanan Kami
+          <p>Pilih layanan kebersihan sesuai kebutuhanmu.</p>
+        </div>
+
+        <div class="services">
+          <div class="card">
+            <div class="icon">🏠</div>
+            <h3>Cleaning Rumah</h3>
+            <p>Pembersihan lantai, ruang tamu, dan permukaan perabot.</p>
+            <div class="price">Rp150.000</div>
+          </div>
+
+          <div class="card">
+            <div class="icon">🛏️</div>
+            <h3>Cleaning Kamar Kos</h3>
+            <p>Membantu kamar kos menjadi lebih bersih dan nyaman.</p>
+            <div class="price">Rp75.000</div>
+          </div>
+
+          <div class="card">
+            <div class="icon">🧽</div>
+            <h3>Deep Cleaning</h3>
+            <p>
+              Pembersihan menyeluruh untuk area yang membutuhkan perhatian
+              ekstra.
+            </p>
+            <div class="price">Rp250.000</div>
+          </div>
+        </div>
+
+        <p
+          style="
+            text-align: center;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #64756e;
+          "
+        >
+          *Harga di atas merupakan estimasi dan dapat disesuaikan.
+        </p>
+      </section>
+
+      <section class="about" id="tentang">
+        <h2>Tentang BersihIn</h2>
+
+        <p>
+          BersihIn adalah konsep website layanan cleaning service yang dirancang
+          untuk memudahkan masyarakat Makassar mendapatkan informasi dan
+          melakukan pemesanan jasa kebersihan.
+        </p>
+
+        <p><strong>Website Proyek — Kelompok 3</strong></p>
+      </section>
+
+      <section id="pesan">
+        <div class="heading">
+          <h2>Formulir Pemesanan</h2>
+          <p>
+            Isi informasi berikut untuk memesan layanan langsung via WhatsApp.
+          </p>
+        </div>
+
+        <form class="booking" id="bookingForm">
+          <!-- Input Pengaturan Nomor WA Admin -->
+          <div class="admin-setting">
+            <label for="adminPhone"
+              >📱 Nomor WhatsApp Admin (Tujuan Pesanan):</label
+            >
+            <input
+              id="adminPhone"
+              type="text"
+              value="6285652248858"
+              placeholder="Contoh: 6285652248858"
+            />
+          </div>
+
+          <label for="nama">Nama Lengkap</label>
+          <input
+            id="nama"
+            type="text"
+            required
+            placeholder="Masukkan nama Anda"
+          />
+
+          <label for="telepon">Nomor HP / WhatsApp Anda</label>
+          <input id="telepon" type="tel" required placeholder="08xxxxxxxxxx" />
+
+          <label for="layananPilihan">Jenis Layanan</label>
+          <select id="layananPilihan" required>
+            <option value="">-- Pilih Layanan --</option>
+            <option value="Cleaning Rumah (Rp150.000)">
+              Cleaning Rumah (Rp150.000)
+            </option>
+            <option value="Cleaning Kamar Kos (Rp75.000)">
+              Cleaning Kamar Kos (Rp75.000)
+            </option>
+            <option value="Deep Cleaning (Rp250.000)">
+              Deep Cleaning (Rp250.000)
+            </option>
+          </select>
+
+          <label for="tanggal">Tanggal Pemesanan</label>
+          <input id="tanggal" type="date" required />
+
+          <label for="alamat">Alamat Lengkap di Makassar</label>
+          <input
+            id="alamat"
+            type="text"
+            required
+            placeholder="Contoh: Jl. Perintis Kemerdekaan KM. 10"
+          />
+
+          <label for="catatan">Catatan Tambahan (Opsional)</label>
+          <textarea
+            id="catatan"
+            placeholder="Tuliskan catatan khusus jika ada (misal: patokan lokasi atau area yang perlu dibersihkan ekstra)"
+          ></textarea>
+
+          <button class="button" type="submit">
+            💬 Pesan melalui WhatsApp
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <h3>BersihIn</h3>
+      <p>Cleaning Service Makassar</p>
+      <p>Website Proyek Kelompok 3</p>
+      <p>© <span id="year"></span> BersihIn</p>
+    </footer>
+
+    <script>
+          // Tahun di Footer
+          document.getElementById("year").textContent = new Date().getFullYear();
+
+          // Fungsi Pengiriman Formulir ke WhatsApp
+          document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Ambil nomor admin
+            let adminNum = document.getElementById("adminPhone").value.trim().replace(/[^0-9]/g, '');
+
+            if (!adminNum) {
+              alert("Harap masukkan nomor WhatsApp Admin!");
+              return;
+            }
+
+            // Ambil data pemesan
+            const nama = document.getElementById("nama").value.trim();
+            const telepon = document.getElementById("telepon").value.trim();
+            const layanan = document.getElementById("layananPilihan").value;
+            const tanggal = document.getElementById("tanggal").value;
+            const alamat = document.getElementById("alamat").value.trim();
+            const catatan = document.getElementById("catatan").value.trim();
+
+            // Format Pesan WhatsApp
+            const pesanText =
+              "*Halo BersihIn (Kelompok 3), saya ingin memesan layanan cleaning service.*
+
+      " +
+              "📋 *DETAIL PEMESANAN:*
+      " +
+              "• *Nama:* " + nama + "
+      " +
+              "• *No. HP/WA:* " + telepon + "
+      " +
+              "• *Layanan:* " + layanan + "
+      " +
+              "• *Tanggal:* " + tanggal + "
+      " +
+              "• *Alamat:* " + alamat + "
+      " +
+              "• *Catatan:* " + (catatan ? catatan : "-") + "
+
+      " +
+              "Mohon informasi konfirmasi dan jadwal kedatangannya. Terima kasih!";
+
+            // Buat URL WA
+            const waUrl = "https://api.whatsapp.com/send?phone=" + adminNum + "&text=" + encodeURIComponent(pesanText);
+
+            // Buka tautan WhatsApp langsung
+            window.location.href = waUrl;
+          });
+    </script>
+  </body>
+</html>
